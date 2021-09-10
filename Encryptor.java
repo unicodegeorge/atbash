@@ -24,19 +24,15 @@ public class Encryptor {
             boolean isSpace = currentChar == ' ';
             int currentPos = sentence.indexOf(currentChar);
 
-            if (!isValid && !isSpace) {
+            if (!isValid && !isSpace || isSpace) {
                 continue;
             }
-
-            if(isSpace) {
-                continue;
-            } else {
                 int posOfCharInAlphabet = alphabet.indexOf(Character.toLowerCase(currentChar));
                 int reversedPos = (alphabet.length() - 1) - posOfCharInAlphabet;
                 char encryptedChar = alphabet.charAt(reversedPos);
                 stringBuilder.setCharAt(currentPos, isLowerCase ? Character.toLowerCase(encryptedChar) : Character.toUpperCase(encryptedChar));
             }
-        }
+
         return stringBuilder.toString();
     }
 }

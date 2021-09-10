@@ -22,13 +22,9 @@ public class Encryptor {
             boolean isLowerCase = Character.isLowerCase(currentChar);
             boolean isValid = Pattern.matches(regex, Character.toString(currentChar));
             boolean isSpace = currentChar == ' ';
-
-
             int currentPos = sentence.indexOf(currentChar);
 
-
             if (!isValid && !isSpace) {
-                stringBuilder.setCharAt(currentPos, ' ');
                 continue;
             }
 
